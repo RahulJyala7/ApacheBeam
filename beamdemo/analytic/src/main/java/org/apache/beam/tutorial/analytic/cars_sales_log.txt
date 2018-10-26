@@ -1,0 +1,6 @@
+ id,brand_name,model_name,sales_number
+ 1,Renault,Scenic,3
+ 2,Peugeut,307,2
+ 1,Renault,Megane,4
+ 3,Citroen,c3,5
+ 3,Citroen,c5,3

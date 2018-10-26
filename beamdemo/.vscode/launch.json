@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConfigExample",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.beam.tutorial.config.ConfigExample",
+            "args": "",
+            "projectName": "analytic"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SalesPerCarsBrand",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.beam.tutorial.analytic.SalesPerCarsBrand",
+            "args": "",
+            "projectName": "analytic"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FilterObjects",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.beam.tutorial.analytic.FilterObjects",
+            "args": "",
+            "projectName": "analytic"
+        }
+    ]
+}
