@@ -59,11 +59,18 @@
             </dependency>
 
             <!-- Runners -->
-            <dependency>
+            <!-- <dependency>
                 <groupId>org.apache.beam</groupId>
                 <artifactId>beam-runners-direct-java</artifactId>
                 <version>${beam.version}</version>
-            </dependency>
+            </dependency> -->
+
+             <dependency>
+                <groupId>org.apache.beam</groupId>
+                <artifactId>beam-runners-flink_2.11</artifactId>
+                <version>2.7.0</version>
+            </dependency> 
+
 
         </dependencies>
     </dependencyManagement>
@@ -129,12 +136,43 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <dependencies>
-                <dependency>
+                <!-- <dependency>
                     <groupId>org.apache.beam</groupId>
                     <artifactId>beam-runners-direct-java</artifactId>
+                </dependency> -->
+
+                <dependency>
+                    <groupId>org.apache.beam</groupId>
+                    <artifactId>beam-runners-flink_2.11</artifactId>
                 </dependency>
+
+
             </dependencies>
         </profile>
+        
+          <profile>
+            <id>flink-runner</id>
+            <!-- Makes the FlinkRunner available when running a pipeline. -->
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.beam</groupId>
+                    <artifactId>beam-runners-flink_2.11</artifactId>
+                    <version>${beam.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+
         <profile>
             <id>spark-runner</id>
             <dependencies>

@@ -2,36 +2,28 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ConfigExample",
+            "name": "CodeLens (Launch) - MongoIO",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "org.apache.beam.tutorial.config.ConfigExample",
-            "args": "",
+            "mainClass": "org.apache.beam.tutorial.analytic.MongoIO",
             "projectName": "analytic"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - SalesPerCarsBrand",
+            "name": "CodeLens (Launch) - CassandraDeepStorage",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "org.apache.beam.tutorial.analytic.SalesPerCarsBrand",
-            "args": "",
+            "mainClass": "org.apache.beam.tutorial.analytic.CassandraDeepStorage",
             "projectName": "analytic"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - FilterObjects",
+            "name": "DataFlowEngine",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "org.apache.beam.tutorial.analytic.FilterObjects",
-            "args": "",
-            "projectName": "analytic"
+            "mainClass": "org.apache.beam.tutorial.analytic.CassandraDeepStorage",
+            "args": "--grpcPort=50052",
+            "projectName": "tutorial"
         }
     ]
 }
