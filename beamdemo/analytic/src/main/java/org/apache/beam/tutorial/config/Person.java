@@ -14,20 +14,19 @@ public class Person implements Serializable {
     @Column( name = "personname" )
     private String name;
     
-
     public int getId() {
         return id;
     }
 
-    public void setId(int patientid) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getAccountId() {
+    public String getAccountid() {
         return accountId;
     }
 
-    public void setAccountId(int patientid) {
+    public void setAccountid(String accountId) {
         this.accountId = accountId;
     }
 
@@ -35,7 +34,7 @@ public class Person implements Serializable {
         return name;
     }
 
-    public void setName(int patientid) {
+    public void setName(String name) {
         this.name = name;
     }
 }

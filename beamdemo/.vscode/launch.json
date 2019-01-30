@@ -13,17 +13,6 @@
             "request": "launch",
             "mainClass": "org.apache.beam.tutorial.analytic.CassandraDeepStorage",
             "projectName": "analytic"
-        },
-        {
-            "type": "java",
-            "name": "DataFlowEngine",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "org.apache.beam.tutorial.analytic.CassandraDeepStorage",
-            "args": "--grpcPort=50052",
-            "projectName": "tutorial"
         }
     ]
 }

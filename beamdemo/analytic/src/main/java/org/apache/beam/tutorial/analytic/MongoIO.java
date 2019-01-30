@@ -1,5 +1,7 @@
 package org.apache.beam.tutorial.analytic;
 
+import com.mongodb.util.JSON;
+
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.mongodb.MongoDbIO;
 import org.apache.beam.sdk.transforms.*;
@@ -19,7 +21,7 @@ public class MongoIO {
         PCollection<Document> input = pipeline.apply(
                 MongoDbIO.read().withUri("mongodb://127.0.0.1:27017").withDatabase("mydb").withCollection("people"));
 
-        input.apply("JUST DEBUG", ParDo.of(new DoFn<Document, String>() {
+        input.apply("JUST DEBUG", ParDo.of(new DoFn<Document, JSON>() {
             @ProcessElement
             public void processElement(ProcessContext c) throws Exception {
                 System.out.println(c.element().toJson());

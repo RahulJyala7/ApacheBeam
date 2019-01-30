@@ -22,22 +22,19 @@ public class CassandraDeepStorage {
         // options.setRunner(DirectRunner.class);
 
         PipelineOptions options = PipelineOptionsFactory.create();
-   
 
         Pipeline pipeline = Pipeline.create(options);
 
         PCollection<Person> input = pipeline.apply(
                 CassandraIO.<Person>read().withHosts(Arrays.asList("192.168.0.77")).withPort(9042).withKeyspace("beam")
                         .withTable("Person").withEntity(Person.class).withCoder(SerializableCoder.of(Person.class)));
-                    
-                        input.apply("ExtractPayload", ParDo.of(new DoFn<Person, Person>() {
-                            @ProcessElement
-                            public void processElement(ProcessContext c) throws Exception {
-                              System.out.println(c.element().getAccountId());
-                              System.out.println(c.element().getName() + "${c.element().getName()} with name");
-                              c.output(c.element());
-                            }
-                          }));
+
+        input.apply("ExtractPayload", ParDo.of(new DoFn<Person, Person>() {
+            @ProcessElement
+            public void processElement(ProcessContext c) throws Exception {
+                c.output(c.element());
+            }
+        }));
 
         input.apply(CassandraIO.<Person>write().withHosts(Arrays.asList("192.168.0.77")).withPort(9042)
                 .withKeyspace("beam").withEntity(Person.class));
