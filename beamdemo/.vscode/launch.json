@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CassandraJDBC",
+            "request": "launch",
+            "mainClass": "org.apache.beam.tutorial.analytic.CassandraJDBC",
+            "projectName": "analytic"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MongoIO",
             "request": "launch",
             "mainClass": "org.apache.beam.tutorial.analytic.MongoIO",

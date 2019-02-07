@@ -16,11 +16,6 @@ public class CassandraDeepStorage {
 
     public static final void main(String args[]) throws Exception {
 
-        System.out.println("Main Method");
-        // Flink Runner
-        // PipelineOptions options = PipelineOptionsFactory.create();
-        // options.setRunner(DirectRunner.class);
-
         PipelineOptions options = PipelineOptionsFactory.create();
 
         Pipeline pipeline = Pipeline.create(options);
